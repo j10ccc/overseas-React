@@ -1,0 +1,28 @@
+.home-page {
+  .container {
+    display: flex;
+    padding: 70px 0;
+    height: 800px;
+    width: 1200px;
+    margin: 0 auto;
+
+    .col {
+      flex: 0 0 50%;
+      padding: 20px 0;
+    }
+
+  }
+
+  .container:first-child::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 64px;
+    border-radius: 6px;
+    background-color: aqua;
+  }
+}
+
+.home-page:nth-child(1) {
+  justify-content: flex-end;
+}
