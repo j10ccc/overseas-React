@@ -1,12 +1,17 @@
 type prodIntroductionType = {
   name: string;
   description: string[];
+  extra?: string[];
 };
 
 const prodIntroduction: prodIntroductionType[] = [
   {
     name: "商业文书写作助手",
-    description: ["超强大的语言矫正功能和个性化译员配置"]
+    description: ["超强大的语言矫正功能和个性化译员配置"],
+    extra: [
+      "应用 Language Tool（LT）搭载完整的专业术语语料库，为商业文书提供专业的语言矫正服务。",
+      "利用大数据标签技术，为高翻译要求用户提供个性化配置专业译员。"
+    ]
   },
   {
     name: "语料查询系统",

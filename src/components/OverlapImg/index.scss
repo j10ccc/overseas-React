@@ -1,0 +1,20 @@
+.overlap-img {
+  padding: 0 15px;
+
+  .img-wrapper {
+    display: inline-block;
+    padding: 10px;
+    background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    border-radius: 24px;
+  }
+
+  .img-wrapper:first-child {
+    position: absolute;
+  }
+
+  .img-wrapper:last-child {
+    position: relative;
+    top: 140px;
+    left: 50px;
+  }
+}

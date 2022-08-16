@@ -1,7 +1,23 @@
-h1 {
-  font-size: 3rem;
-}
+.prod-header {
+  padding: 0 20px;
 
-p {
-  font-size: 1.75rem;
+  h1 {
+    font-size: 3rem;
+    position: relative;
+  }
+
+  h1::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 64px;
+    border-radius: 6px;
+    background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    top: -10px;
+  }
+
+  p {
+    font-size: 1.75rem;
+  }
+
 }

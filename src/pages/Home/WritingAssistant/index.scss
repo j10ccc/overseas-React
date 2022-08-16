@@ -1,0 +1,68 @@
+.writing-assistant {
+  width: 1300px;
+  margin: 0 auto;
+  display: flex;
+
+  .card {
+    font-size: 1.25rem;
+    padding: 30px;
+    box-shadow: 0 4px 8px #4DBDA940;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    background-color: white;
+
+    mark {
+      background: none;
+      color: #00579B;
+    }
+  }
+
+  .feat-grid {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    grid-template-rows: 250px 250px;
+    justify-content: end;
+    column-gap: 70px;
+  }
+
+  .feat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .icon-wrapper {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      width: 85px;
+      height: 85px;
+      fill: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    }
+
+    .label-wrapper {
+      font-size: 1.25rem;
+      line-height: 2.75rem;
+      width: 100%;
+      text-align: center;
+      color: white;
+      margin-top: 30px;
+      border-radius: 1.375rem;
+      background: linear-gradient(270deg, #93E196 0%, #71D2FF 100%);
+    }
+
+  }
+}
+
+.wave1 {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 664px;
+}
