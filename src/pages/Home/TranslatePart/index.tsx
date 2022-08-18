@@ -1,18 +1,20 @@
 import OverLapImg from "@/components/OverlapImg";
-import { prodIntroduction } from "../../../constants";
 import img1 from "@/assets/home/frame32.png";
 import img2 from "@/assets/home/frame33.png";
+import FeatureDetail from "@/components/FeatureDetail";
+import { ProdFeature } from "@/types/index";
 import "./index.scss";
-import ProductionDetail from "@/components/ProductDetail";
 
-function TranslatePart() {
+function TranslatePart(props: any) {
+  const { featInfo }: { featInfo: ProdFeature } = props;
   return (
     <div className="container">
       <div className="translate-part">
         <div className="col">
-          <ProductionDetail
-            title={prodIntroduction[2].name}
-            description={prodIntroduction[2].description}
+          <FeatureDetail
+            title={featInfo.name}
+            description={featInfo.description}
+            demoRoute={featInfo.demoRoute}
           />
         </div>
         <div className="col">

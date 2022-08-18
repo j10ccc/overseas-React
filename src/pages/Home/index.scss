@@ -9,8 +9,27 @@
     }
   }
 
-  .container:first-child {
+  .home-header {
+    position: relative;
     background: linear-gradient(140deg, #03ACF21A 1.6%, #4CAF501A 105%);
+  }
+
+  .content {
+    background: url("@/assets/home/wave2.svg") no-repeat;
+    background-size: 100vw 1200px;
+  }
+
+
+  .content .container:nth-child(odd) {
+    .feat-detail {
+      align-items: flex-end;
+    }
+  }
+
+  .content .container:nth-child(even) {
+    .feat-detail {
+      align-items: flex-start;
+    }
   }
 
 }

@@ -1,0 +1,51 @@
+.demo-page {
+
+  .container {
+    display: flex;
+    padding: 70px 0;
+    height: 800px;
+  }
+
+  .demo-header {
+    position: relative;
+    background: linear-gradient(140deg, #03ACF21A 1.6%, #4CAF501A 105%);
+
+    .container {
+      display: flex;
+      height: 400px;
+    }
+  }
+
+  .demo-title {
+    width: 1300px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      line-height: 100%;
+    }
+  }
+
+  .demo-content-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 6rem;
+
+    h1 {
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .demo-content-title-split {
+      height: 12px;
+      width: 72px;
+      border-radius: 6px;
+      background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    }
+  }
+
+  .content {
+    margin-bottom: 200px;
+  }
+}

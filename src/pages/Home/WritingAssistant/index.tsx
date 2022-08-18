@@ -1,37 +1,16 @@
 import ProductionHeader from "@/components/ProductHeader";
-import { prodIntroduction } from "@/constants/index";
-import "./index.scss";
 import "@/assets/home/icon.svg";
+import iconSprite from "@/assets/home/icon.svg";
+import { ProdAdvantage, ProdIntroductionType } from "@/types/index";
+import "./index.scss";
 
-import icon from "@/assets/home/icon.svg";
-import wave1 from "@/assets/home/wave1.svg";
-
-const featList = [
-  {
-    label: "权威语料库",
-    iconId: "#1660619917679"
-  },
-  {
-    label: "专业人才库",
-    iconId: "#1660619945936"
-  },
-  {
-    label: "双用户定位",
-    iconId: "#1660619952414"
-  },
-  {
-    label: "新众包模式",
-    iconId: "#1660619959945"
-  }
-];
-
-function FeatItem(props: any) {
-  const { iconId, label }: { iconId: string; label: string } = props;
+function AdvantageItem(props: any) {
+  const { icon, label }: ProdAdvantage = props;
   return (
     <div className="feat-item">
       <div className="icon-wrapper">
         <svg>
-          <use xlinkHref={icon + iconId}></use>
+          <use xlinkHref={iconSprite + icon}></use>
         </svg>
       </div>
       <div className="label-wrapper">
@@ -41,14 +20,15 @@ function FeatItem(props: any) {
   );
 }
 
-function WritingAssistant() {
+function WritingAssistant(props: any) {
+  const { prodInfo }: { prodInfo: ProdIntroductionType } = props;
   return (
     <div className="container">
       <div className="writing-assistant">
         <div className="col">
           <ProductionHeader
-            title={prodIntroduction[0].name}
-            description={prodIntroduction[0].description}
+            title={prodInfo.name}
+            description={prodInfo.description}
           />
           <div className="card">
             应用<mark>Language Tool（LT）</mark>
@@ -63,13 +43,12 @@ function WritingAssistant() {
         </div>
         <div className="col">
           <div className="feat-grid">
-            {featList.map((item) => (
-              <FeatItem key={item.label} {...item}></FeatItem>
+            {prodInfo.advantages.map((item) => (
+              <AdvantageItem key={item.label} {...item} />
             ))}
           </div>
         </div>
       </div>
-      <img className="wave1" src={wave1}></img>
     </div>
   );
 }

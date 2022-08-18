@@ -1,0 +1,11 @@
+.footer {
+  position: relative;
+  height: 100px;
+
+  .img-wave3 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+  }
+}

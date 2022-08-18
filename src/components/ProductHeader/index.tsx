@@ -2,15 +2,12 @@ import PropTypes from "prop-types";
 import "./index.scss";
 
 function ProductionHeader(props: any) {
-  const { title, description }: { title: string; description: string[] } =
-    props;
+  const { title, description }: { title: string; description: string } = props;
 
   return (
     <div className="prod-header">
       <h1>{title}</h1>
-      {description.map((item) => (
-        <p key={item}>{item}</p>
-      ))}
+      <p>{description}</p>
     </div>
   );
 }

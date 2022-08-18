@@ -19,7 +19,8 @@
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
       "@/assets/*": ["./src/assets/*"],
-      "@/pages/*": ["./src/pages/*"]
+      "@/pages/*": ["./src/pages/*"],
+      "@/types/*": ["./src/types/*"]
     }
   },
   "include": ["src"],

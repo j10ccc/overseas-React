@@ -1,15 +1,14 @@
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import { Outlet } from "react-router-dom";
 import "./app.scss";
 
 function App() {
   return (
     <div className="app">
-      <section className="header">
-        <NavBar />
-      </section>
-      <Home />
-      <section className="footer"></section>
+      <NavBar />
+      <Outlet />
+      <Footer />
     </div>
   );
 }
