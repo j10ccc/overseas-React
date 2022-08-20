@@ -20,7 +20,8 @@
       "@/constants/*": ["./src/constants/*"],
       "@/assets/*": ["./src/assets/*"],
       "@/pages/*": ["./src/pages/*"],
-      "@/types/*": ["./src/types/*"]
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src"],

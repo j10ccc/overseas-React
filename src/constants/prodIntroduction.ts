@@ -41,7 +41,7 @@ const prodIntroduction: ProdIntroductionType[] = [
       {
         icon: "#1660619973144",
         alias: "翻译矫正",
-        name: "翻译矫正",
+        name: "翻译矫正系统",
         description: [
           "弥补传统翻译软件行业用语翻译专业性低的缺陷，打破传统企业人工翻译成本高昂困境",
           "构建集成语言纠正服务优势与人工翻译专业优势的独创性文书写作软件"

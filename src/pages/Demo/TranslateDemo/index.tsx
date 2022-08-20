@@ -11,7 +11,6 @@ function TranslateDemo() {
           <div className="selector-wrapper">
             <label>行业： </label>
             <Select
-              size="large"
               defaultValue="绿色化工"
               suffixIcon={<CaretDownFilled style={{ color: "#477840" }} />}>
               <Option value="绿色化工">绿色化工</Option>
@@ -20,7 +19,6 @@ function TranslateDemo() {
           <div className="selector-wrapper">
             <label>语言： </label>
             <Select
-              size="large"
               defaultValue="英语"
               suffixIcon={<CaretDownFilled style={{ color: "#477840" }} />}>
               <Option value="英语">英语</Option>

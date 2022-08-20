@@ -20,10 +20,6 @@
     border-radius: 20px !important;
     color: #477840;
   }
-
-  label {
-    font-size: 1.2rem;
-  }
 }
 
 .corpus-demo-search-card-body {
@@ -49,6 +45,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 0px 40px rgba(16, 88, 75, 0.25);
+  margin: 40px 0;
 
   .corpus-demo-result-card-header {
     display: flex;
@@ -66,8 +63,55 @@
       span {
         color: gray;
       }
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .mark-button {
+      font-size: 1.5rem;
+      color: lightgray;
+    }
+
+    .mark-button-active {
+      color: #f4bb40;
     }
 
   }
+
+  .corpus-demo-result-card-body {
+    background-color: white;
+    padding: 10px 30px;
+  }
+
+  .operate-area {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: linear-gradient(270deg, #93E196 0%, #71D2FF 100%) !important;
+      border: none;
+    }
+  }
+
+  .corpus-area {
+    .corpus-result-item {
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 200%;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
 
 }

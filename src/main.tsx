@@ -8,6 +8,7 @@ import "antd/dist/antd.css";
 import Demo from "./pages/Demo";
 import TranslateDemo from "./pages/Demo/TranslateDemo";
 import CorpusDemo from "./pages/Demo/CorpusDemo";
+import PageNotFound from "./pages/PageNotFound";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <Route path="corpus" element={<CorpusDemo />}></Route>
           </Route>
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

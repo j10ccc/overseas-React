@@ -1,11 +1,11 @@
 .writing-assistant {
-  width: 1300px;
+  width: 1000px;
   margin: 0 auto;
   display: flex;
 
   .card {
     font-size: 1.25rem;
-    padding: 30px;
+    padding: 2rem;
     box-shadow: 0 4px 8px #4DBDA940;
     margin-bottom: 30px;
     border-radius: 16px;
@@ -19,7 +19,7 @@
 
   .feat-grid {
     display: grid;
-    grid-template-columns: 180px 180px;
+    grid-template-columns: 130px 130px;
     grid-template-rows: 250px 250px;
     justify-content: end;
     column-gap: 70px;
@@ -31,8 +31,8 @@
     align-items: center;
 
     .icon-wrapper {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -41,8 +41,8 @@
     }
 
     svg {
-      width: 85px;
-      height: 85px;
+      width: 60px;
+      height: 60px;
       fill: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
     }
 

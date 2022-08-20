@@ -1,11 +1,14 @@
 .overlap-img {
   padding: 0 15px;
+  width: 80%;
+  position: relative;
 
   .img-wrapper {
     display: inline-block;
-    padding: 10px;
+    padding: 8px;
     background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
     border-radius: 24px;
+    width: 100%;
   }
 
   .img-wrapper:first-child {
@@ -13,8 +16,12 @@
   }
 
   .img-wrapper:last-child {
-    position: relative;
-    top: 140px;
-    left: 50px;
+    position: absolute;
+    top: 120px;
+    left: 12%;
+  }
+
+  img {
+    width: 100%;
   }
 }

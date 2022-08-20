@@ -8,7 +8,8 @@ function FeatureDetail(props: any) {
     title,
     description,
     demoRoute
-  }: { title: string; description: string[]; demoRoute: string } = props;
+  }: { title: string; description: string[]; name: string; demoRoute: string } =
+    props;
 
   return (
     <div className="feat-detail">
@@ -22,7 +23,9 @@ function FeatureDetail(props: any) {
         type="primary"
         shape="round"
         style={{ backgroundColor: "#4CAF50", border: "none" }}>
-        <Link to={demoRoute}>免费试用</Link>
+        <Link to={demoRoute} state={{ demoTitle: title }}>
+          免费试用
+        </Link>
       </Button>
     </div>
   );

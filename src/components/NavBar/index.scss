@@ -1,8 +1,9 @@
 .nav {
   display: flex;
-  padding: 18px 80px;
+  padding: 0 80px;
   justify-content: space-between;
   background: linear-gradient(140deg, #03ACF21A 1.6%, #4CAF501A 105%);
+
 }
 
 .nav-logo {
@@ -18,10 +19,12 @@
   flex: 0 0 60%;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 
   .service-list-item {
     color: #000000CC;
+    position: relative;
+    text-align: center;
   }
 
   .service-list-item-active {
@@ -30,10 +33,14 @@
 
   .service-list-item-active::after {
     content: "";
+    display: block;
     position: absolute;
     background-color: #03ACF2;
-    height: 5px;
-    width: 26px;
+    border-radius: 3px;
+    height: 6px;
+    width: 100%;
+    bottom: -12px;
+    margin: 0 auto
   }
 
 }
@@ -45,5 +52,6 @@
 
   .trial-button {
     background: linear-gradient(270deg, #93E196 0%, #71D2FF 100%) !important;
+    border: none;
   }
 }
