@@ -2,10 +2,11 @@
   width: 1000px;
   margin: 0 auto;
   display: flex;
+  z-index: 10;
 
   .card {
     font-size: 1.25rem;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 8px #4DBDA940;
     margin-bottom: 30px;
     border-radius: 16px;
@@ -40,10 +41,9 @@
       justify-content: center;
     }
 
-    svg {
+    img {
       width: 60px;
       height: 60px;
-      fill: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
     }
 
     .label-wrapper {

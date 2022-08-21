@@ -30,7 +30,25 @@ function TranslateDemo() {
             <div
               contentEditable="true"
               className="textarea"
-              placeholder="在此处键入或粘贴问题"></div>
+              spellCheck={false}
+              placeholder="在此处键入或粘贴问题">
+              <text>
+                Based on engineering practice, the authors selected the special
+                space of China Yueyang Petrochemical Industrial Park as the
+                object of discussion,
+              </text>
+              <em>addressed</em> the main problems and challenges facing its
+              development,
+              <em>
+                and between the relationship of industrial symbiosis and spatial
+                symbiotic
+              </em>
+              . From the analysis of the current situation, the circular
+              symbiotic industrial chain network, and the layout of the
+              symbiotic park are included in the spatial planning of the
+              industrial park.
+            </div>
+            <div className="translate-demo-textarea-counter">320 / 400</div>
           </div>
         </div>
         <div className="translate-demo-card-footer">

@@ -145,7 +145,7 @@ function CorpusDemo() {
             <Input
               placeholder="请输入单词或词语"
               size="large"
-              value={keyWord}
+              defaultValue={keyWord}
             />
             <Button
               type="primary"

@@ -1,17 +1,21 @@
 import ProductionHeader from "@/components/ProductHeader";
 import "@/assets/home/icon.svg";
-import iconSprite from "@/assets/home/icon.svg";
-import { ProdAdvantage, ProdIntroductionType } from "@/types/index";
+import { ProdIntroductionType } from "@/types/index";
 import "./index.scss";
 
+import icon1 from "@/assets/home/icon1.svg";
+import icon2 from "@/assets/home/icon2.svg";
+import icon3 from "@/assets/home/icon3.svg";
+import icon4 from "@/assets/home/icon4.svg";
+
+const iconList = [icon1, icon2, icon3, icon4];
+
 function AdvantageItem(props: any) {
-  const { icon, label }: ProdAdvantage = props;
+  const { label, index } = props;
   return (
     <div className="feat-item">
       <div className="icon-wrapper">
-        <svg>
-          <use xlinkHref={iconSprite + icon}></use>
-        </svg>
+        <img src={iconList[index]} />
       </div>
       <div className="label-wrapper">
         <label>{label}</label>
@@ -43,8 +47,8 @@ function WritingAssistant(props: any) {
         </div>
         <div className="col">
           <div className="feat-grid">
-            {prodInfo.advantages.map((item) => (
-              <AdvantageItem key={item.label} {...item} />
+            {prodInfo.advantages.map((item, index) => (
+              <AdvantageItem key={item.label} {...item} index={index} />
             ))}
           </div>
         </div>

@@ -11,19 +11,19 @@ const prodIntroduction: ProdIntroductionType[] = [
     advantages: [
       {
         label: "权威语料库",
-        icon: "#1660619917679"
+        icon: "icon1.svg"
       },
       {
         label: "专业人才库",
-        icon: "#1660619945936"
+        icon: "icon2.svg"
       },
       {
         label: "双用户定位",
-        icon: "#1660619952414"
+        icon: "icon3.svg"
       },
       {
         label: "新众包模式",
-        icon: "#1660619959945"
+        icon: "icon4.svg"
       }
     ],
     featureList: [

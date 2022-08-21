@@ -16,6 +16,7 @@
 .translate-demo-card-body {
 
   .translate-demo-textarea-wrapper {
+    position: relative;
     padding: 4px;
     background: linear-gradient(270deg, #93E196 0%, #71D2FF 100%) !important;
     border-radius: 8px;
@@ -29,6 +30,23 @@
     padding: 1.2rem 1.5rem;
     font-size: 1.5rem;
     background-color: white;
+    color: #000000B3;
+
+    em {
+      font-style: normal;
+      background-color: #d7e9fb;
+      text-decoration: underline;
+      text-decoration-color: #235696;
+      text-decoration-style: none;
+    }
+
+  }
+
+  .translate-demo-textarea-counter {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    color: #000000CC;
   }
 
   [placeholder]:empty:before {
