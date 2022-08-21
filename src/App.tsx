@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { scrollToTop } from "./utils";
 
 function App() {
-  const a = 1;
-  a = 2;
   const location = useLocation();
   useEffect(() => {
     scrollToTop();
