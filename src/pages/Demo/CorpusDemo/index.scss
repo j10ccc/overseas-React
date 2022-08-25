@@ -82,12 +82,13 @@
 
   .corpus-demo-result-card-body {
     background-color: white;
-    padding: 10px 30px;
+    padding: 10px 0;
   }
 
   .operate-area {
     display: flex;
     justify-content: space-between;
+    padding: 5px 30px;
 
     button {
       background: linear-gradient(270deg, #93E196 0%, #71D2FF 100%) !important;
@@ -96,6 +97,10 @@
   }
 
   .corpus-area {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding-left: 30px;
+
     .corpus-result-item {
       margin-top: 20px;
     }

@@ -1,4 +1,5 @@
 .demo-page {
+  position: relative;
 
   .container {
     display: flex;
@@ -16,14 +17,26 @@
     }
   }
 
+
   .demo-title {
     width: 1000px;
     margin: 0 auto;
+    position: relative;
 
     h1 {
       font-size: 3rem;
       line-height: 100%;
     }
+  }
+
+  .demo-title::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 4rem;
+    border-radius: 6px;
+    background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    top: -24px;
   }
 
   .demo-content-title {
