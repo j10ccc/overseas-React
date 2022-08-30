@@ -1,9 +1,20 @@
 import "./index.scss";
-import wave3 from "@/assets/home/wave3.svg";
+import wave3 from "@/assets/writingAssistant/wave3.svg";
+import { useLocation } from "react-router-dom";
+import { CSSProperties, useEffect, useState } from "react";
 
 function Footer() {
+  const location = useLocation();
+  const [footerStyle, setFooterStyle] = useState<CSSProperties>({});
+
+  useEffect(() => {
+    if (location.pathname === "/") setFooterStyle({ display: "none" });
+    else {
+      setFooterStyle({});
+    }
+  }, [location.pathname]);
   return (
-    <footer className="footer">
+    <footer className="footer" style={footerStyle}>
       <img src={wave3} className="img-wave3" />
     </footer>
   );

@@ -1,8 +1,7 @@
-FROM node:16
+FROM node:16-alpine
 WORKDIR /app
 COPY . /app
-RUN yarn
-RUN yarn build
+RUN yarn && yarn build
 
 FROM nginx
 COPY --from=0 /app/dist /usr/share/nginx/html

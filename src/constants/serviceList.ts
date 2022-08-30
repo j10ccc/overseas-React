@@ -13,16 +13,8 @@ const serviceList: serviceType[] = [
     route: "/introduction"
   },
   {
-    name: "产品中心",
-    route: "/products"
-  },
-  {
     name: "定制服务",
     route: "/customized-service"
-  },
-  {
-    name: "全球门店",
-    route: "/stores"
   },
   {
     name: "联系我们",

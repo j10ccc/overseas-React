@@ -1,13 +1,27 @@
 import { Button } from "antd";
 import { serviceList } from "@/constants/index";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./index.scss";
 
-import logo from "@/assets/home/logo.png";
+import logo from "@/assets/writingAssistant/logo.png";
+import { CSSProperties, useEffect, useState } from "react";
 
-export default function NavBar(props: any) {
+export default function NavBar() {
+  const location = useLocation();
+  const [navStyle, setNavStyle] = useState<CSSProperties>({});
+
+  useEffect(() => {
+    if (location.pathname === "/") setNavStyle({ background: "none" });
+    else {
+      setNavStyle({
+        background: "linear-gradient(140deg, #03ACF21A 1.6%, #4CAF501A 105%)"
+      });
+    }
+  }, [location.pathname]);
+
   return (
-    <nav className="nav">
+    <nav className="nav" style={navStyle}>
       <div className="nav-logo">
         <img src={logo} />
       </div>

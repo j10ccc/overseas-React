@@ -1,5 +1,5 @@
 import { ProdFeature } from "@/types/index";
-import iconSprite from "@/assets/home/icon.svg";
+import iconSprite from "@/assets/writingAssistant/icon.svg";
 import "./index.scss";
 
 function FeatureListItem(props: any) {

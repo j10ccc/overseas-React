@@ -1,3 +1,39 @@
+.product-page {
+  .container {
+    display: flex;
+    padding: 70px 0;
+    height: 600px;
+
+    .col {
+      flex: 0 0 50%;
+    }
+  }
+
+  .product-header {
+    position: relative;
+    background: linear-gradient(140deg, #03ACF21A 1.6%, #4CAF501A 105%);
+  }
+
+  .content {
+    background: url("@/assets/writingAssistant/wave2.svg") no-repeat;
+    background-size: 100% 1200px;
+  }
+
+
+  .content .container:nth-child(odd) {
+    .feat-detail {
+      align-items: flex-end;
+    }
+  }
+
+  .content .container:nth-child(even) {
+    .feat-detail {
+      align-items: flex-start;
+    }
+  }
+
+}
+
 .writing-assistant {
   width: 1000px;
   margin: 0 auto;

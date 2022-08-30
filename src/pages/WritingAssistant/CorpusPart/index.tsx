@@ -1,15 +1,18 @@
 import OverLapImg from "@/components/OverlapImg";
-import img1 from "@/assets/home/frame32.png";
-import img2 from "@/assets/home/frame33.png";
 import FeatureDetail from "@/components/FeatureDetail";
 import { ProdFeature } from "@/types/index";
+import img1 from "@/assets/writingAssistant/frame34.png";
+import img2 from "@/assets/writingAssistant/frame35.png";
 import "./index.scss";
 
-function TranslatePart(props: any) {
+function CorpusPart(props: any) {
   const { featInfo }: { featInfo: ProdFeature } = props;
   return (
     <div className="container">
-      <div className="translate-part">
+      <div className="corpus-part">
+        <div className="col">
+          <OverLapImg imgList={[img1, img2]} />
+        </div>
         <div className="col">
           <FeatureDetail
             title={featInfo.name}
@@ -17,12 +20,8 @@ function TranslatePart(props: any) {
             demoRoute={featInfo.demoRoute}
           />
         </div>
-        <div className="col">
-          <OverLapImg imgList={[img1, img2]} />
-        </div>
       </div>
     </div>
   );
 }
-
-export default TranslatePart;
+export default CorpusPart;

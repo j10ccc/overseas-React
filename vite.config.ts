@@ -13,7 +13,8 @@ export default defineConfig({
       assets: path.resolve(__dirname, "src/assets"),
       constants: path.resolve(__dirname, "src/constants"),
       types: path.resolve(__dirname, "src/types"),
-      utils: path.resolve(__dirname, "src/utils")
+      utils: path.resolve(__dirname, "src/utils"),
+      styles: path.resolve(__dirname, "src/styles")
     }
   }
 });

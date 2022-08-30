@@ -58,7 +58,12 @@
     }
   }
 
-  .content {
+  .demo-content-title:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  .demo-content {
     margin-bottom: 200px;
   }
+
 }

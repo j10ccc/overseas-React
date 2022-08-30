@@ -1,15 +1,19 @@
+import CorpusPart from "./CorpusPart";
+import TranslatePart from "./TranslatePart";
+import { prodIntroduction } from "@/constants/index";
+import FeatureList from "@/components/FeatureList";
 import ProductionHeader from "@/components/ProductHeader";
-import "@/assets/home/icon.svg";
 import { ProdIntroductionType } from "@/types/index";
+
+import wave1 from "@/assets/writingAssistant/wave1.svg";
+import icon1 from "@/assets/writingAssistant/icon1.svg";
+import icon2 from "@/assets/writingAssistant/icon2.svg";
+import icon3 from "@/assets/writingAssistant/icon3.svg";
+import icon4 from "@/assets/writingAssistant/icon4.svg";
+import "@/assets/writingAssistant/icon.svg";
 import "./index.scss";
 
-import icon1 from "@/assets/home/icon1.svg";
-import icon2 from "@/assets/home/icon2.svg";
-import icon3 from "@/assets/home/icon3.svg";
-import icon4 from "@/assets/home/icon4.svg";
-
 const iconList = [icon1, icon2, icon3, icon4];
-
 function AdvantageItem(props: any) {
   const { label, index } = props;
   return (
@@ -24,7 +28,7 @@ function AdvantageItem(props: any) {
   );
 }
 
-function WritingAssistant(props: any) {
+function PageHeader(props: any) {
   const { prodInfo }: { prodInfo: ProdIntroductionType } = props;
   return (
     <div className="container">
@@ -57,4 +61,18 @@ function WritingAssistant(props: any) {
   );
 }
 
-export default WritingAssistant;
+export default function WritingAssistant() {
+  return (
+    <section className="product-page">
+      <section className="product-header">
+        <PageHeader prodInfo={prodIntroduction[0]} />
+        <img className="wave1" src={wave1}></img>
+      </section>
+      <section className="content">
+        <FeatureList featList={prodIntroduction[0].featureList} />
+        <CorpusPart featInfo={prodIntroduction[0].featureList[0]} />
+        <TranslatePart featInfo={prodIntroduction[0].featureList[1]} />
+      </section>
+    </section>
+  );
+}
