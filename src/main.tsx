@@ -4,13 +4,14 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import WritingAssistant from "./pages/WritingAssistant";
 import Home from "./pages/Home";
-import "./index.scss";
+import "./styles/index.scss";
 import "antd/dist/antd.css";
 import Demo from "./pages/Demo";
 import TranslateDemo from "./pages/Demo/TranslateDemo";
 import CorpusDemo from "./pages/Demo/CorpusDemo";
 import PageNotFound from "./pages/PageNotFound";
 import WritingAssistant from "./pages/WritingAssistant";
+import LiveRoomDemo from "./pages/Demo/LiveRoomDemo";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -25,7 +26,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="product">
             <Route
               path="writing-assistant"
-              element={<WritingAssistant />}></Route>
+              element={<WritingAssistant />}
+            ></Route>
+            <Route path="liveroom" element={<LiveRoomDemo />}></Route>
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />

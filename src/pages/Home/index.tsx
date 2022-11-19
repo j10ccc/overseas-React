@@ -7,27 +7,27 @@ const data = [
     alias: "BUSSINESS WRITING ASSISTANT",
     name: "商业文书写作助手",
     descriptions: ["超强大的语言矫正功能", "和个性化译员配置"],
-    route: "/product/writing-assistant"
+    route: "/product/writing-assistant",
   },
   {
     alias: "NEW MEDIA CONTENT CREATION ASSISTANT",
     name: "新媒体内容创作助手",
     descriptions: ["超丰富的媒体资源分享检索", "和创新宣传片译制服务"],
-    route: "/product/writing-assistant"
+    route: "/product/writing-assistant",
   },
   {
     alias: "VIRTUAL LIVE BROADCAST ASSISANT",
-    name: "商业文书写作助手",
+    name: "虚拟IP直播出海助手",
     descriptions: ["超生动的虚拟主播形象", "和实时同频翻译输出"],
-    route: "/product/writing-assistant"
-  }
+    route: "/product/liveroom",
+  },
 ];
 function ProductCard(props: any) {
   const {
     alias,
     name,
     descriptions,
-    route
+    route,
   }: { alias: string; name: string; descriptions: string[]; route: string } =
     props;
   return (
