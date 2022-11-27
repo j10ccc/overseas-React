@@ -1,0 +1,48 @@
+.feature-list {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  align-items: center;
+}
+
+.feature-list-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(270deg, #b3e5fc 0%, #c8e6c9 100%);
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 10px solid #f6fbfa;
+  box-sizing: content-box;
+  position: relative;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin: 0.75rem;
+  }
+}
+
+.feature-list-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -11px;
+  border-radius: inherit;
+  background: linear-gradient(270deg, #b3e5fc 0%, #c8e6c9 100%);
+}
+
+.feature-list-split {
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(270deg, #b3e5fc 0%, #c8e6c9 100%);
+  margin: 0 80px;
+}

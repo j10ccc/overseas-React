@@ -1,0 +1,36 @@
+.feat-detail {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2.5rem;
+    position: relative;
+  }
+
+  .detail-split {
+    height: 12px;
+    width: 4rem;
+    margin-bottom: 2.5rem;
+    border-radius: 6px;
+    background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+  }
+
+  p {
+    font-size: 1.5rem;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  p::before {
+    content: '';
+    position: absolute;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background: linear-gradient(270deg, #B3E5FC 0%, #C8E6C9 100%);
+    top: 1rem;
+    left: 0;
+  }
+
+}
