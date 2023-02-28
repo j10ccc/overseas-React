@@ -9,6 +9,7 @@ specifiers:
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   antd: ^4.22.5
+  classnames: ^2.3.2
   prop-types: ^15.8.1
   typescript: ^4.1.2
   umi: ^4.0.32
@@ -19,6 +20,7 @@ dependencies:
   '@mediapipe/face_mesh': 0.4.1633559619
   '@mediapipe/holistic': 0.5.1635989137
   antd: 4.24.3
+  classnames: 2.3.2
   prop-types: 15.8.1
   umi: 4.0.32_67qtuwzoc7udjy4tprqgr5q6qy
 

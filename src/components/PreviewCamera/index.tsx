@@ -4,65 +4,79 @@ import { Camera } from "@mediapipe/camera_utils";
 import React, { useState, useRef, useEffect, memo } from "react";
 import { drawLandmarks, drawConnectors } from "@mediapipe/drawing_utils";
 import "./index.less";
+import { Button, Space } from "antd";
+import classnames from "classnames";
 
-const CameraInstance = memo(
-  (props: { inputVideoRef: React.MutableRefObject<HTMLVideoElement> }) => {
-    const { inputVideoRef } = props;
-    let camera: Camera;
+const CameraInstance = (props: { 
+  inputVideoRef: React.MutableRefObject<HTMLVideoElement> 
+  faceMeshRef: React.MutableRefObject<FaceMesh>
+  cameraOn: boolean
+  showCameraView: boolean
+}) => {
+    const { inputVideoRef, faceMeshRef, cameraOn, showCameraView } = props;
+    const camera = useRef<Camera>();
+
     useEffect(() => {
       if (!inputVideoRef.current) return;
-      camera = new Camera(inputVideoRef.current, {
-        onFrame: async () => {
-          await facemesh.send({ image: inputVideoRef.current as any });
-        },
-        width: 320,
-        height: 240,
-      });
 
-      // 打开摄像头需要 SSL
-      // 开发环境下 localhost
-      camera
-        .start()
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => console.log(err));
+      camera.current = new Camera(
+        inputVideoRef.current, {
+          onFrame: async () => {
+            if (!faceMeshRef?.current) return;
+            await faceMeshRef.current.send({ image: inputVideoRef.current as any });
+          },
+          width: 320,
+          height: 240,
+        }
+      )
     }, []);
+
+    useEffect(() => {
+      if (cameraOn === true) {
+        camera.current?.start();
+      } else {
+        camera.current?.stop();
+      }
+    }, [cameraOn])
+
     return (
       <video
-        className="input-video"
+        className={classnames(["input-video", !showCameraView && "video-hidden"])}
         ref={inputVideoRef}
         width="320px"
         height="240px"
-      ></video>
+      />
     );
-  }
-);
+};
 
 const PreviewCamera = () => {
   const inputVideoRef = useRef<HTMLVideoElement>();
   const outputCanvasRef = useRef<any>();
 
-  // const [cameraOn, setCameraOn] = useState(false);
-  const cameraOn = useRef(false);
+  const [cameraOn, setCameraOn] = useState(false);
+  const [showCameraView, setShowCameraView] = useState(true);
 
-  const facemesh = new FaceMesh({
-    locateFile: (path: string) =>
-      `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${path}`,
-  });
+  const facemesh = useRef<FaceMesh>();
 
-  facemesh.setOptions({
-    maxNumFaces: 1,
-    refineLandmarks: true,
-    minDetectionConfidence: 0.5,
-    minTrackingConfidence: 0.5,
-  });
+  useEffect(() => {
+    facemesh.current = new FaceMesh({
+      locateFile: (path: string) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${path}`,
+    })
+
+    facemesh.current.setOptions({
+      maxNumFaces: 1,
+      refineLandmarks: true,
+      minDetectionConfidence: 0.5,
+      minTrackingConfidence: 0.5,
+    });
+
+    facemesh.current?.onResults(onResults);
+  }, [])
 
   const onResults = (results: any) => {
     drawResults(results.multiFaceLandmarks[0]);
   };
 
-  facemesh.onResults(onResults);
 
   const drawResults = (points: any) => {
     if (!outputCanvasRef.current || !inputVideoRef.current || !points) return;
@@ -93,13 +107,25 @@ const PreviewCamera = () => {
 
   return (
     <section className="preview-camera">
-      <CameraInstance inputVideoRef={inputVideoRef} />
-      <canvas className="output-canvas" ref={outputCanvasRef}></canvas>
-      <div>
-        <button onClick={() => (cameraOn.current = !cameraOn)}>
-          {!cameraOn ? "Start" : "Stop"} Camera
-        </button>
-      </div>
+      <section className="camera-wrapper">
+        <CameraInstance 
+          inputVideoRef={inputVideoRef}
+          faceMeshRef={facemesh}
+          cameraOn={cameraOn}
+          showCameraView={showCameraView}
+        />
+        <canvas className="output-canvas" ref={outputCanvasRef} />
+      </section>
+      <section>
+        <Space>
+          <Button type="primary" onClick={() => setCameraOn(!cameraOn)}>
+            {!cameraOn ? "开启" : "终止"} 捕捉
+          </Button>
+          <Button onClick={() => setShowCameraView(!showCameraView)}>
+            {!cameraOn ? "开启" : "隐藏"} 摄像视图
+          </Button>
+        </Space>
+      </section>
     </section>
   );
 };
